@@ -1,0 +1,1 @@
+class Publisher(var name: String)
