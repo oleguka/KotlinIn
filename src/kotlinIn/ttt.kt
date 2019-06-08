@@ -1,0 +1,4 @@
+package kotlinIn
+
+interface ttt {
+}
