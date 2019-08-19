@@ -5,12 +5,19 @@ plugins {
 group 'fafe2'
 version '1.0-SNAPSHOT'
 
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile "com.github.yole:jkid:-SNAPSHOT"
 }
 
 compileKotlin {
