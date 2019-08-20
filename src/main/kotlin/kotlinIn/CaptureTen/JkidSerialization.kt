@@ -4,6 +4,7 @@ import ru.yole.jkid.JsonExclude
 import ru.yole.jkid.JsonName
 import ru.yole.jkid.deserialization.deserialize
 import ru.yole.jkid.serialization.serialize
+import kotlin.reflect.full.memberProperties
 
 data class Person(val name: String, val age: Int)
 
@@ -22,5 +23,14 @@ fun main() {
 
     val jsonAlice = """{"alias": "Alice"}"""
     println(deserialize<Human>(jsonAlice))
+
+    val kClass = person.javaClass.kotlin
+    println(kClass.simpleName)
+    println(kClass.qualifiedName)
+    println(kClass.members)
+    println(kClass.constructors)
+    println(kClass.nestedClasses)
+
+    kClass.memberProperties.forEach { println(it.name) }
 
 }
